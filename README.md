@@ -1,54 +1,48 @@
-# React + TypeScript + Vite
+A React + TypeScript + Tailwind CSS + ShadCN UI app that allows users to search and view GitHub profiles along with their repositories.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Deploying to Vercel
 
-Currently, two official plugins are available:
+Vercel offers an easy way to deploy React applications directly from your GitHub repository.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Step-by-step Guide
 
-## Expanding the ESLint configuration
+1. **Push Your Project to GitHub**
+   
+   Make sure your project is committed and pushed to a GitHub repository.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Create a Vercel Account**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+   If you don’t already have one, sign up at [https://vercel.com](https://vercel.com).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. **Import Your GitHub Repository**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+   - Go to [https://vercel.com/new](https://vercel.com/new)
+   - Select your GitHub repo containing the GitHub profile viewer project.
+   - Vercel will automatically detect that you are using a React + TypeScript setup.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+4. **Set Build Settings**
+
+   These are usually auto-detected, but just in case:
+
+   - **Framework Preset:** Vite
+   - **Build Command:** `npm run build` or `yarn build`
+   - **Output Directory:** `dist` (for Vite) or `build` (for CRA). Adjust if different.
+   - **Install Command:** `npm install` or `yarn`
+
+
+5. **Deploy**
+
+Click **Deploy** and wait for Vercel to build and deploy your project. Once completed, Vercel will provide a live URL.
+
+
+
+
+
+### 🛠 Tech Stack
+
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **ShadCN UI**
+
+
