@@ -27,7 +27,7 @@ function Tab({
   chartData: ChartDataType[];
 }) {
   return (
-    <Tabs defaultValue="account" className="w-full py-4  ">
+    <Tabs defaultValue="profile" className="w-full py-4  ">
       <TabsList className="grid grid-cols-3 w-full">
         <TabsTrigger value="profile">Profile</TabsTrigger>
         <TabsTrigger value="repositories">Repositories</TabsTrigger>
