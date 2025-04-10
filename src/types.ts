@@ -28,6 +28,11 @@ interface GitHubRepoType {
     created_at: string;
 }
 
+interface ChartDataType {
 
+    date: string;
+    commits: number;
 
-export type { GitHubUserType, GitHubRepoType, CommitActivityTypes };
+}
+
+export type { GitHubUserType, GitHubRepoType, ChartDataType };

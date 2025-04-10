@@ -1,11 +1,11 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { GitHubUserType, GitHubRepoType } from "@/types";
+import { GitHubUserType, GitHubRepoType , ChartDataType} from "@/types";
 import { ExternalLink } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Star, GitFork } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "../ui/button";
-
+import { CommmitCharts } from "./CommitCharts";
 import {
   Card,
   CardHeader,
@@ -15,14 +15,16 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 
-// import { Link } from "react-router-dom";
+
 
 function Tab({
   userData,
   reposData,
+  chartData
 }: {
   userData: GitHubUserType;
   reposData: GitHubRepoType[];
+  chartData: ChartDataType[];
 }) {
   return (
     <Tabs defaultValue="account" className="w-full py-4  ">
@@ -213,7 +215,7 @@ function Tab({
         </Card>
       </TabsContent>
       <TabsContent value="commits" className="pt-6">
-        commit history
+        <CommmitCharts data={chartData} />
       </TabsContent>
     </Tabs>
   );
