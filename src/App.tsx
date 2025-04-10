@@ -1,6 +1,4 @@
-import { Input } from "./components/ui/input";
-import { Button } from "./components/ui/button";
-import SearchBar from "./components/customComponents/SearchBar";
+
 import "./App.css";
 import "./index.css";
 import GithubProfileViewer from "./components/customComponents/GithubProfileViewer";

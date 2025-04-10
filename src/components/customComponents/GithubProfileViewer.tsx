@@ -70,7 +70,7 @@ function GithubProfileViewer() {
       const reposArray = await repos.json();
       console.log("reposArray", reposArray);
 
-      const commitFetches = reposArray.slice(0, 5).map((repo) =>
+      const commitFetches = reposArray.slice(0, 5).map((repo: GitHubRepoType) =>
         fetch(
           `https://api.github.com/repos/${data.username}/${repo.name}/commits?author=${data.username}`
         )
@@ -88,7 +88,9 @@ function GithubProfileViewer() {
         if (result.status === "fulfilled" && Array.isArray(result.value)) {
           result.value.forEach((commit) => {
             if (commit?.commit?.author?.date) {
-              const date = new Date(commit.commit.author.date).toLocaleDateString(); // "YYYY-MM-DD"
+              const date = new Date(
+                commit.commit.author.date
+              ).toLocaleDateString(); // "YYYY-MM-DD"
               dateCountMap[date] = (dateCountMap[date] || 0) + 1;
             }
           });
@@ -104,14 +106,12 @@ function GithubProfileViewer() {
         );
       console.log("chartData", chartData);
       setCommitActivity(chartData);
-
     } catch (error) {
       setError(error instanceof Error ? error.message : "An error occurred");
     } finally {
       setLoading(false);
     }
   };
-
 
   return (
     <div className="w-full max-w-3xl mx-auto">
@@ -139,7 +139,13 @@ function GithubProfileViewer() {
           <AlertDescription className="text-red-400">{error}</AlertDescription>
         </Alert>
       )}
-      {userData && <Tab userData={userData} reposData={reposData} chartData={commitActivity} />}
+      {userData && (
+        <Tab
+          userData={userData}
+          reposData={reposData}
+          chartData={commitActivity}
+        />
+      )}
     </div>
   );
 }
